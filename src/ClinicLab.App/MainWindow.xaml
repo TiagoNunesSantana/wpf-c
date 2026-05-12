@@ -14,7 +14,6 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Menu lateral -->
         <Border Grid.Column="0"
                 Background="#1F2937">
 
@@ -35,11 +34,15 @@
                         Height="40"
                         Click="Pacientes_Click"/>
 
+                <Button Content="Exames"
+                        Height="40"
+                        Margin="0,10,0,0"
+                        Click="Exames_Click"/>
+
             </StackPanel>
 
         </Border>
 
-        <!-- Área principal -->
         <ContentControl x:Name="MainContent"
                         Grid.Column="1"/>
 

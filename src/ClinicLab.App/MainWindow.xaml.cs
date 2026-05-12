@@ -21,4 +21,9 @@ public partial class MainWindow : Window
     {
         MainContent.Content = new PacientesView();
     }
+
+    private void Exames_Click(object sender, RoutedEventArgs e)
+    {
+        MainContent.Content = new ExamesView();
+    }
 }

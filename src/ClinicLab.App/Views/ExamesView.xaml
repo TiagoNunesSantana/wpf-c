@@ -1,0 +1,158 @@
+<UserControl x:Class="ClinicLab.App.Views.ExamesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="25">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Text="Cadastro de Exames"
+                   FontSize="26"
+                   FontWeight="Bold"
+                   Margin="0,0,0,20"/>
+
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    Margin="0,0,0,20">
+
+            <TextBox Width="380"
+                     Height="35"
+                     Margin="0,0,10,0"
+                     Text="{Binding TermoBusca, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Button Content="Buscar"
+                    Width="120"
+                    Height="35"
+                    Margin="0,0,10,0"
+                    Command="{Binding BuscarCommand}"/>
+
+            <Button Content="Limpar Busca"
+                    Width="130"
+                    Height="35"
+                    Command="{Binding LimparCommand}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="2"
+              Margin="0,0,0,20">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Margin="0,0,0,10">
+
+                <TextBlock Text="Nome do Exame"/>
+                <TextBox Height="35"
+                         Margin="0,5,0,0"
+                         Text="{Binding Nome, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="0,0,0,10">
+
+                <TextBlock Text="Valor"/>
+                <TextBox Height="35"
+                         Margin="0,5,0,0"
+                         Text="{Binding Valor, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1"
+                        Grid.Column="2"
+                        Margin="0,0,0,10">
+
+                <TextBlock Text="Prazo de Entrega (dias)"/>
+                <TextBox Height="35"
+                         Margin="0,5,0,0"
+                         Text="{Binding PrazoEntregaDias, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3">
+
+                <TextBlock Text="Descrição"/>
+                <TextBox Height="35"
+                         Margin="0,5,0,0"
+                         Text="{Binding Descricao, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="3"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,0,0,20">
+
+            <CheckBox Content="Ativo"
+                      IsChecked="{Binding Ativo}"
+                      VerticalAlignment="Center"
+                      Margin="0,0,20,0"/>
+
+            <Button Content="Salvar"
+                    Width="140"
+                    Height="40"
+                    Margin="0,0,10,0"
+                    Command="{Binding SalvarCommand}"/>
+
+            <Button Content="Excluir"
+                    Width="140"
+                    Height="40"
+                    Margin="0,0,10,0"
+                    Command="{Binding ExcluirCommand}"/>
+
+            <Button Content="Limpar Campos"
+                    Width="140"
+                    Height="40"
+                    Command="{Binding LimparCommand}"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="4"
+                  ItemsSource="{Binding Exames}"
+                  SelectedItem="{Binding ExameSelecionado, Mode=TwoWay}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="True">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nome"
+                                    Binding="{Binding Nome}"
+                                    Width="*"/>
+
+                <DataGridTextColumn Header="Valor"
+                                    Binding="{Binding Valor, StringFormat=R$ {0:N2}}"
+                                    Width="130"/>
+
+                <DataGridTextColumn Header="Prazo"
+                                    Binding="{Binding PrazoEntregaDias}"
+                                    Width="90"/>
+
+                <DataGridTextColumn Header="Ativo"
+                                    Binding="{Binding Ativo}"
+                                    Width="80"/>
+
+                <DataGridTextColumn Header="Descrição"
+                                    Binding="{Binding Descricao}"
+                                    Width="260"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

@@ -110,9 +110,11 @@ C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\zh-Hant\Microsoft.
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\ClinicLab.App.csproj.AssemblyReference.cache
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\MainWindow.baml
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\Views\DashboardView.baml
+C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\Views\ExamesView.baml
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\Views\PacientesView.baml
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\MainWindow.g.cs
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\Views\DashboardView.g.cs
+C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\Views\ExamesView.g.cs
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\Views\PacientesView.g.cs
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\App.g.cs
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\ClinicLab.App_Content.g.cs

@@ -25,29 +25,29 @@ public class PacienteRepository
     {
         await using var context = CreateContext();
         context.Pacientes.Add(paciente);
-        context.SaveChanges();
+        await context.SaveChangesAsync();
     }
 
     public static async Task Atualizar(Paciente paciente)
     {
         await using var context = CreateContext();
         context.Pacientes.Update(paciente);
-        context.SaveChanges();
+        await context.SaveChangesAsync();
     }    
 
     public static async Task Excluir(Paciente paciente)
     {
         await using var context = CreateContext();
         context.Pacientes.Remove(paciente);
-        context.SaveChanges();
+        await context.SaveChangesAsync();
     }   
 
     public static async Task<List<Paciente>> Listar()
     {
         await using var context = CreateContext();
-        return context.Pacientes
+        return await context.Pacientes
             .OrderBy(p => p.Nome)
-            .ToList();
+            .ToListAsync();
     }     
 
     public static async Task<List<Paciente>> Buscar(string termo)
