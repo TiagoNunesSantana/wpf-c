@@ -27,6 +27,9 @@ public partial class PacienteViewModel : ObservableObject
     [ObservableProperty]
     private Paciente? pacienteSelecionado;  
 
+    [ObservableProperty]
+    private string termoBusca = string.Empty;    
+
     partial void OnPacienteSelecionadoChanged(Paciente? value)
     {
         if (value == null)
@@ -178,4 +181,20 @@ public partial class PacienteViewModel : ObservableObject
                 MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
+
+    [RelayCommand]
+    private async Task Buscar()
+    {
+        Pacientes = new ObservableCollection<Paciente>(
+            await PacienteRepository.Buscar(TermoBusca)
+        );
+    }
+
+    [RelayCommand]
+    private void Limpar()
+    {
+        LimparCampos();
+        TermoBusca = string.Empty;
+        Carregar();
+    }    
 }

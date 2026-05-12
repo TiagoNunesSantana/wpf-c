@@ -40,5 +40,30 @@ public class PacienteRepository
         await using var context = CreateContext();
         context.Pacientes.Remove(paciente);
         context.SaveChanges();
+    }   
+
+    public static async Task<List<Paciente>> Listar()
+    {
+        await using var context = CreateContext();
+        return context.Pacientes
+            .OrderBy(p => p.Nome)
+            .ToList();
+    }     
+
+    public static async Task<List<Paciente>> Buscar(string termo)
+    {
+        await using var context = CreateContext();
+        if (string.IsNullOrWhiteSpace(termo))
+            return await Listar();
+
+        termo = termo.ToLower();
+
+        return context.Pacientes
+            .Where(p =>
+                p.Nome.ToLower().Contains(termo) ||
+                p.Cpf.ToLower().Contains(termo)
+            )
+            .OrderBy(p => p.Nome)
+            .ToList();
     }    
 }
