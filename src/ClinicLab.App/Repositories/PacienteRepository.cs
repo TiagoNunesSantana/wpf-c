@@ -66,4 +66,17 @@ public class PacienteRepository
             .OrderBy(p => p.Nome)
             .ToList();
     }    
+
+    public int Contar()
+    {   using var context = CreateContext();
+        return context.Pacientes.Count();
+    }
+
+    public Paciente? ObterUltimoCadastro()
+    {
+        using var context = CreateContext();
+        return context.Pacientes
+            .OrderByDescending(p => p.DataCadastro)
+            .FirstOrDefault();
+    }    
 }

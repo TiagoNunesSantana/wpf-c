@@ -21,7 +21,8 @@
                        Margin="0,0,0,30"/>
 
             <UniformGrid Columns="3"
-                         Rows="1">
+                         Rows="1"
+                         Margin="0,0,0,30">
 
                 <Border BorderBrush="#DDD"
                         BorderThickness="1"
@@ -30,13 +31,14 @@
                         Margin="0,0,15,0">
 
                     <StackPanel>
-                        <TextBlock Text="Pacientes"
+                        <TextBlock Text="Pacientes Cadastrados"
                                    FontSize="16"
                                    FontWeight="SemiBold"/>
-                        <TextBlock Text="Cadastro e gerenciamento"
-                                   FontSize="13"
-                                   Foreground="Gray"
-                                   Margin="0,8,0,0"/>
+
+                        <TextBlock Text="{Binding TotalPacientes}"
+                                   FontSize="32"
+                                   FontWeight="Bold"
+                                   Margin="0,12,0,0"/>
                     </StackPanel>
                 </Border>
 
@@ -47,13 +49,15 @@
                         Margin="0,0,15,0">
 
                     <StackPanel>
-                        <TextBlock Text="Banco de Dados"
+                        <TextBlock Text="Último Paciente"
                                    FontSize="16"
                                    FontWeight="SemiBold"/>
-                        <TextBlock Text="PostgreSQL integrado via EF Core"
-                                   FontSize="13"
-                                   Foreground="Gray"
-                                   Margin="0,8,0,0"/>
+
+                        <TextBlock Text="{Binding UltimoPaciente}"
+                                   FontSize="18"
+                                   FontWeight="Bold"
+                                   TextWrapping="Wrap"
+                                   Margin="0,12,0,0"/>
                     </StackPanel>
                 </Border>
 
@@ -63,17 +67,41 @@
                         Padding="20">
 
                     <StackPanel>
-                        <TextBlock Text="Arquitetura"
+                        <TextBlock Text="Última Atualização"
                                    FontSize="16"
                                    FontWeight="SemiBold"/>
-                        <TextBlock Text="MVVM + Repository Pattern"
-                                   FontSize="13"
-                                   Foreground="Gray"
-                                   Margin="0,8,0,0"/>
+
+                        <TextBlock Text="{Binding UltimaAtualizacao}"
+                                   FontSize="18"
+                                   FontWeight="Bold"
+                                   Margin="0,12,0,0"/>
                     </StackPanel>
                 </Border>
 
             </UniformGrid>
+
+            <TextBlock Text="Resumo técnico"
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,15"/>
+
+            <Border BorderBrush="#DDD"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="20">
+
+                <StackPanel>
+                    <TextBlock Text="Stack utilizada"
+                               FontSize="16"
+                               FontWeight="SemiBold"
+                               Margin="0,0,0,10"/>
+
+                    <TextBlock Text="WPF • C# • .NET • MVVM • Entity Framework Core • PostgreSQL • Repository Pattern"
+                               FontSize="14"
+                               TextWrapping="Wrap"
+                               Foreground="Gray"/>
+                </StackPanel>
+            </Border>
 
         </StackPanel>
 
