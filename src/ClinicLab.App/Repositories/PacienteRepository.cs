@@ -1,21 +1,30 @@
 using ClinicLab.App.Data;
+using ClinicLab.App.Helpers;
 using ClinicLab.App.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClinicLab.App.Repositories;
 
 public class PacienteRepository
 {
-    private readonly AppDbContext _context = new();
-
-    public List<Paciente> Listar()
+    private static AppDbContext CreateContext()
     {
-        return _context.Pacientes.ToList();
+        var options = new DbContextOptionsBuilder<AppDbContext>()
+            .UseNpgsql(AppConfig.ConnectionString)
+            .Options;
+        return new AppDbContext(options);
     }
 
-    public void Salvar(Paciente paciente)
+    public static async Task<List<Paciente>> ListarAsync()
     {
-        _context.Pacientes.Add(paciente);
+        await using var context = CreateContext();
+        return await context.Pacientes.ToListAsync();
+    }
 
-        _context.SaveChanges();
+    public static async Task SalvarAsync(Paciente paciente)
+    {
+        await using var context = CreateContext();
+        context.Pacientes.Add(paciente);
+        await context.SaveChangesAsync();
     }
 }

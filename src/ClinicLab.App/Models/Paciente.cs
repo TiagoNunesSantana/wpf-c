@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace ClinicLab.App.Models;
 
 public class Paciente
@@ -6,7 +8,8 @@ public class Paciente
 
     public string Nome { get; set; } = string.Empty;
 
-    public string CPF { get; set; } = string.Empty;
+    [Column("CPF")]
+    public string Cpf { get; set; } = string.Empty;
 
     public string Telefone { get; set; } = string.Empty;
 

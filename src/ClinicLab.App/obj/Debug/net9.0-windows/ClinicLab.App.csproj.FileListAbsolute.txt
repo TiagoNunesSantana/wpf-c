@@ -1,3 +1,4 @@
+C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\appsettings.json
 C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\ClinicLab.App.exe
 C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\ClinicLab.App.deps.json
 C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\ClinicLab.App.runtimeconfig.json
@@ -19,10 +20,16 @@ C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.EntityFr
 C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.Configuration.dll
 C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.Configuration.Json.dll
 C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.DependencyInjection.dll
 C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.DependencyModel.dll
+C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.Logging.dll
 C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Projetos\WPF-C#\src\ClinicLab.App\bin\Debug\net9.0-windows\Microsoft.Extensions.Options.dll
@@ -104,12 +111,14 @@ C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\ClinicLab.App.cspr
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\MainWindow.baml
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\MainWindow.g.cs
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\App.g.cs
+C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\ClinicLab.App_Content.g.cs
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\ClinicLab.App_MarkupCompile.cache
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\ClinicLab.App.g.resources
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\ClinicLab.App.GeneratedMSBuildEditorConfig.editorconfig
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\ClinicLab.App.AssemblyInfoInputs.cache
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\ClinicLab.App.AssemblyInfo.cs
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\ClinicLab.App.csproj.CoreCompileInputs.cache
+C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\ClinicLab.App.sourcelink.json
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\ClinicLa.63D4167B.Up2Date
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\ClinicLab.App.dll
 C:\Projetos\WPF-C#\src\ClinicLab.App\obj\Debug\net9.0-windows\refint\ClinicLab.App.dll

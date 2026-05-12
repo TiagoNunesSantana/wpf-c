@@ -10,9 +10,7 @@ public partial class MainWindow : Window
         InitializeComponent();
 
         var vm = new PacienteViewModel();
-
         DataContext = vm;
-
         vm.CarregarCommand.Execute(null);
     }
 }

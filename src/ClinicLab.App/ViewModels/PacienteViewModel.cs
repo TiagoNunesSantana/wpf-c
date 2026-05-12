@@ -9,50 +9,72 @@ namespace ClinicLab.App.ViewModels;
 
 public partial class PacienteViewModel : ObservableObject
 {
-    private readonly PacienteRepository _repository = new();
-
     [ObservableProperty]
     private string nome = string.Empty;
 
     [ObservableProperty]
-    private ObservableCollection<Paciente> pacientes = new();
+    private string cpf = string.Empty;
+
+    [ObservableProperty]
+    private string telefone = string.Empty;
+
+    [ObservableProperty]
+    private string convenio = string.Empty;
+
+    [ObservableProperty]
+    private ObservableCollection<Paciente> pacientes = [];
 
     [RelayCommand]
-    private void Salvar()
+    private async Task Salvar()
     {
+        if (string.IsNullOrWhiteSpace(Nome))
+        {
+            MessageBox.Show("O campo Nome é obrigatório.", "Validação",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
+        }
+
         try
         {
             var paciente = new Paciente
             {
-                Nome = Nome
+                Nome = Nome,
+                Cpf = Cpf,
+                Telefone = Telefone,
+                Convenio = Convenio
             };
 
-            _repository.Salvar(paciente);
+            await PacienteRepository.SalvarAsync(paciente);
 
             Nome = string.Empty;
+            Cpf = string.Empty;
+            Telefone = string.Empty;
+            Convenio = string.Empty;
 
-            Carregar();
+            await Carregar();
         }
         catch (Exception ex)
         {
-            var mensagem = ex.InnerException != null
-                ? ex.InnerException.Message
-                : ex.Message;
-
-            MessageBox.Show(
-                mensagem,
-                "Erro ao salvar",
-                MessageBoxButton.OK,
-                MessageBoxImage.Error
-            );
+            var mensagem = ex.InnerException?.Message ?? ex.Message;
+            MessageBox.Show(mensagem, "Erro ao salvar",
+                MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 
     [RelayCommand]
-    private void Carregar()
+    private async Task Carregar()
     {
-        Pacientes = new ObservableCollection<Paciente>(
-            _repository.Listar()
-        );
+        try
+        {
+            Pacientes = new ObservableCollection<Paciente>(
+                await PacienteRepository.ListarAsync()
+            );
+        }
+        catch (Exception ex)
+        {
+            var mensagem = ex.InnerException?.Message ?? ex.Message;
+            MessageBox.Show(mensagem, "Erro ao carregar",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 }
