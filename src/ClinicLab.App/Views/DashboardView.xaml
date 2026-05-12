@@ -20,7 +20,7 @@
                        TextWrapping="Wrap"
                        Margin="0,0,0,30"/>
 
-            <UniformGrid Columns="3"
+            <UniformGrid Columns="4"
                          Rows="1"
                          Margin="0,0,0,30">
 
@@ -31,11 +31,29 @@
                         Margin="0,0,15,0">
 
                     <StackPanel>
-                        <TextBlock Text="Pacientes Cadastrados"
+                        <TextBlock Text="Pacientes"
                                    FontSize="16"
                                    FontWeight="SemiBold"/>
 
                         <TextBlock Text="{Binding TotalPacientes}"
+                                   FontSize="32"
+                                   FontWeight="Bold"
+                                   Margin="0,12,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="#DDD"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        Padding="20"
+                        Margin="0,0,15,0">
+
+                    <StackPanel>
+                        <TextBlock Text="Exames"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"/>
+
+                        <TextBlock Text="{Binding TotalExames}"
                                    FontSize="32"
                                    FontWeight="Bold"
                                    Margin="0,12,0,0"/>
@@ -67,7 +85,7 @@
                         Padding="20">
 
                     <StackPanel>
-                        <TextBlock Text="Última Atualização"
+                        <TextBlock Text="Atualização"
                                    FontSize="16"
                                    FontWeight="SemiBold"/>
 

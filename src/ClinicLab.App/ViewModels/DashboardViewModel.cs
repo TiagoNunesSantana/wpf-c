@@ -12,6 +12,9 @@ public partial class DashboardViewModel : ObservableObject
     private int totalPacientes;
 
     [ObservableProperty]
+    private int totalExames;
+
+    [ObservableProperty]
     private string ultimoPaciente = "Nenhum paciente cadastrado";
 
     [ObservableProperty]
@@ -19,19 +22,20 @@ public partial class DashboardViewModel : ObservableObject
 
     public DashboardViewModel()
     {
-        CarregarDados();
+        _ = CarregarDados();
     }
 
-    public void CarregarDados()
+    public async Task CarregarDados()
     {
         TotalPacientes = _pacienteRepository.Contar();
 
+        TotalExames = await ExameRepository.Contar();
+
         Paciente? paciente = _pacienteRepository.ObterUltimoCadastro();
 
-        if (paciente != null)
-        {
-            UltimoPaciente = paciente.Nome;
-        }
+        UltimoPaciente = paciente != null
+            ? paciente.Nome
+            : "Nenhum paciente cadastrado";
 
         UltimaAtualizacao = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
     }
