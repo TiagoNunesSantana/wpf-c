@@ -42,6 +42,7 @@
                     Command="{Binding SalvarCommand}"/>
 
             <DataGrid ItemsSource="{Binding Pacientes}"
+                      SelectedItem="{Binding PacienteSelecionado, Mode=TwoWay}"
                       AutoGenerateColumns="False"
                       Height="230"
                       IsReadOnly="True"

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClinicLab.App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0851ccd073e3ea1ed71553d1632e3a81c0647a8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+092ea70c40fe6d0cffb16b856d037dd06c35b2c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClinicLab.App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClinicLab.App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

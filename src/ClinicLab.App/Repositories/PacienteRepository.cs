@@ -21,10 +21,17 @@ public class PacienteRepository
         return await context.Pacientes.ToListAsync();
     }
 
-    public static async Task SalvarAsync(Paciente paciente)
+    public static async Task Salvar(Paciente paciente)
     {
         await using var context = CreateContext();
         context.Pacientes.Add(paciente);
-        await context.SaveChangesAsync();
+        context.SaveChanges();
     }
+
+    public static async Task Atualizar(Paciente paciente)
+    {
+        await using var context = CreateContext();
+        context.Pacientes.Update(paciente);
+        context.SaveChanges();
+    }    
 }

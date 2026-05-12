@@ -24,6 +24,29 @@ public partial class PacienteViewModel : ObservableObject
     [ObservableProperty]
     private ObservableCollection<Paciente> pacientes = [];
 
+    [ObservableProperty]
+    private Paciente? pacienteSelecionado;  
+
+    partial void OnPacienteSelecionadoChanged(Paciente? value)
+    {
+        if (value == null)
+            return;
+
+        Nome = value.Nome;
+        Cpf = value.Cpf;
+        Telefone = value.Telefone;
+        Convenio = value.Convenio;
+    }     
+
+    private void LimparCampos()
+    {
+        PacienteSelecionado = null;
+        Nome = string.Empty;
+        Cpf = string.Empty;
+        Telefone = string.Empty;
+        Convenio = string.Empty;
+    }     
+
     [RelayCommand]
     private async Task Salvar()
     {
@@ -36,22 +59,46 @@ public partial class PacienteViewModel : ObservableObject
 
         try
         {
-            var paciente = new Paciente
+            if (PacienteSelecionado == null)
+            {            
+                var paciente = new Paciente
+                {
+                    Nome = Nome,
+                    Cpf = Cpf,
+                    Telefone = Telefone,
+                    Convenio = Convenio
+                };
+
+                await PacienteRepository.Salvar(paciente);
+
+                Nome = string.Empty;
+                Cpf = string.Empty;
+                Telefone = string.Empty;
+                Convenio = string.Empty;
+
+                await Carregar();
+            }
+            else
             {
-                Nome = Nome,
-                Cpf = Cpf,
-                Telefone = Telefone,
-                Convenio = Convenio
-            };
+                PacienteSelecionado.Nome = Nome;
+                PacienteSelecionado.Cpf = Cpf;
+                PacienteSelecionado.Telefone = Telefone;
+                PacienteSelecionado.Convenio = Convenio;
 
-            await PacienteRepository.SalvarAsync(paciente);
+                await PacienteRepository.Atualizar(PacienteSelecionado);
 
-            Nome = string.Empty;
-            Cpf = string.Empty;
-            Telefone = string.Empty;
-            Convenio = string.Empty;
+                await Carregar();
+            }
 
-            await Carregar();
+            LimparCampos();
+            Carregar();
+
+            MessageBox.Show(
+                "Paciente salvo com sucesso.",
+                "Sucesso",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information
+            );            
         }
         catch (Exception ex)
         {
