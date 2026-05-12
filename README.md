@@ -351,14 +351,24 @@ src/ClinicLab.App/bin/Release/net9.0-windows/win-x64/publish/
 As versões executáveis serão disponibilizadas na aba Releases do GitHub:
 
 https://github.com/TiagoNunesSantana/wpf-c/releases
-🖼️ Screenshots
-Dashboard
 
-Pacientes
+## 🖼️ Screenshots
 
-Exames
+### Dashboard
 
-Wizard de Configuração
+![Dashboard](docs/screenshots/dashboard.png)
+
+### Pacientes
+
+![Pacientes](docs/screenshots/pacientes.png)
+
+### Exames
+
+![Exames](docs/screenshots/exames.png)
+
+### Wizard de Configuração
+
+![Wizard de Configuração](docs/screenshots/wizard.png)
 
 🗺️ Roadmap
 
