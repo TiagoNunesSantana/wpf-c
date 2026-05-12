@@ -1,0 +1,71 @@
+<Window x:Class="ClinicLab.App.Views.SetupWizardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Configuração Inicial - ClinicLab"
+        Height="520"
+        Width="720"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+
+    <Grid Margin="30">
+
+        <StackPanel>
+
+            <TextBlock Text="Configuração Inicial"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Margin="0,0,0,15"/>
+
+            <TextBlock Text="Configure a conexão com o banco de dados PostgreSQL."
+                       FontSize="15"
+                       Foreground="Gray"
+                       Margin="0,0,0,30"/>
+
+            <TextBlock Text="Tipo de banco"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,8"/>
+
+            <ComboBox x:Name="DatabaseTypeCombo"
+                      Height="35"
+                      SelectedIndex="0"
+                      SelectionChanged="DatabaseTypeCombo_SelectionChanged">
+
+                <ComboBoxItem Content="PostgreSQL Local"/>
+                <ComboBoxItem Content="PostgreSQL Railway"/>
+            </ComboBox>
+
+            <TextBlock Text="Connection String"
+                       FontWeight="SemiBold"
+                       Margin="0,25,0,8"/>
+
+            <TextBox x:Name="ConnectionStringTextBox"
+                     Height="100"
+                     TextWrapping="Wrap"
+                     AcceptsReturn="True"
+                     VerticalScrollBarVisibility="Auto"/>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Margin="0,30,0,0">
+
+                <Button Content="Usar Local"
+                        Width="120"
+                        Height="38"
+                        Margin="0,0,10,0"
+                        Click="UseLocal_Click"/>
+
+                <Button Content="Salvar"
+                        Width="120"
+                        Height="38"
+                        Click="Save_Click"/>
+            </StackPanel>
+
+            <TextBlock Text="A configuração será salva localmente no perfil do usuário."
+                       FontSize="12"
+                       Foreground="Gray"
+                       Margin="0,25,0,0"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

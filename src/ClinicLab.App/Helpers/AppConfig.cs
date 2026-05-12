@@ -1,19 +1,24 @@
-using Microsoft.Extensions.Configuration;
+using ClinicLab.App.Services;
 
 namespace ClinicLab.App.Helpers;
 
 public static class AppConfig
 {
-    public static string ConnectionString { get; }
-
-    static AppConfig()
+    public static string ConnectionString
     {
-        var config = new ConfigurationBuilder()
-            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-            .AddJsonFile("appsettings.json", optional: false)
-            .Build();
+        get
+        {
+            var env = Environment.GetEnvironmentVariable("CLINICLAB_CONNECTION_STRING");
 
-        ConnectionString = config.GetConnectionString("DefaultConnection")
-            ?? throw new InvalidOperationException("Connection string 'DefaultConnection' não encontrada.");
+            if (!string.IsNullOrWhiteSpace(env))
+                return env;
+
+            var settings = ConfigService.Load();
+
+            if (!string.IsNullOrWhiteSpace(settings.ConnectionString))
+                return settings.ConnectionString;
+
+            return "Host=localhost;Port=5432;Database=cliniclab;Username=postgres;Password=postgres";
+        }
     }
 }
