@@ -1,0 +1,82 @@
+<UserControl x:Class="ClinicLab.App.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="25">
+
+        <StackPanel>
+
+            <TextBlock Text="Dashboard"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Margin="0,0,0,20"/>
+
+            <TextBlock Text="Bem-vindo ao ClinicLab"
+                       FontSize="20"
+                       Margin="0,0,0,10"/>
+
+            <TextBlock Text="Sistema desktop para gestão de clínica/laboratório desenvolvido em WPF, C#, MVVM, Entity Framework Core e PostgreSQL."
+                       FontSize="15"
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,30"/>
+
+            <UniformGrid Columns="3"
+                         Rows="1">
+
+                <Border BorderBrush="#DDD"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        Padding="20"
+                        Margin="0,0,15,0">
+
+                    <StackPanel>
+                        <TextBlock Text="Pacientes"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"/>
+                        <TextBlock Text="Cadastro e gerenciamento"
+                                   FontSize="13"
+                                   Foreground="Gray"
+                                   Margin="0,8,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="#DDD"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        Padding="20"
+                        Margin="0,0,15,0">
+
+                    <StackPanel>
+                        <TextBlock Text="Banco de Dados"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"/>
+                        <TextBlock Text="PostgreSQL integrado via EF Core"
+                                   FontSize="13"
+                                   Foreground="Gray"
+                                   Margin="0,8,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="#DDD"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        Padding="20">
+
+                    <StackPanel>
+                        <TextBlock Text="Arquitetura"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"/>
+                        <TextBlock Text="MVVM + Repository Pattern"
+                                   FontSize="13"
+                                   Foreground="Gray"
+                                   Margin="0,8,0,0"/>
+                    </StackPanel>
+                </Border>
+
+            </UniformGrid>
+
+        </StackPanel>
+
+    </Grid>
+
+</UserControl>
