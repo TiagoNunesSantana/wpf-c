@@ -41,6 +41,11 @@
                     Margin="0,0,0,20"
                     Command="{Binding SalvarCommand}"/>
 
+            <Button Content="Excluir"
+                    Width="140"
+                    Height="40"
+                    Command="{Binding ExcluirCommand}"/>                    
+
             <DataGrid ItemsSource="{Binding Pacientes}"
                       SelectedItem="{Binding PacienteSelecionado, Mode=TwoWay}"
                       AutoGenerateColumns="False"

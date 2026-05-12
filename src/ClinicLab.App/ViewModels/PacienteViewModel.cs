@@ -91,7 +91,6 @@ public partial class PacienteViewModel : ObservableObject
             }
 
             LimparCampos();
-            Carregar();
 
             MessageBox.Show(
                 "Paciente salvo com sucesso.",
@@ -107,6 +106,61 @@ public partial class PacienteViewModel : ObservableObject
                 MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
+
+    [RelayCommand]
+    private void Excluir()
+    {
+        try
+        {
+            if (PacienteSelecionado == null)
+            {
+                MessageBox.Show(
+                    "Selecione um paciente para excluir.",
+                    "Validação",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
+
+                return;
+            }
+
+            var confirmacao = MessageBox.Show(
+                $"Deseja realmente excluir o paciente {PacienteSelecionado.Nome}?",
+                "Confirmar exclusão",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+            );
+
+            if (confirmacao != MessageBoxResult.Yes)
+                return;
+            
+
+            PacienteRepository.Excluir(PacienteSelecionado);
+
+            LimparCampos();
+            Carregar();
+
+            MessageBox.Show(
+                "Paciente excluído com sucesso.",
+                "Sucesso",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information
+            );
+        }
+        catch (Exception ex)
+        {
+            var mensagem = ex.InnerException != null
+                ? ex.InnerException.Message
+                : ex.Message;
+
+            MessageBox.Show(
+                mensagem,
+                "Erro ao excluir",
+                MessageBoxButton.OK,
+                MessageBoxImage.Error
+            );
+        }
+    }    
 
     [RelayCommand]
     private async Task Carregar()

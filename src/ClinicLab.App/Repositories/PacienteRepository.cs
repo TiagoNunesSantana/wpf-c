@@ -34,4 +34,11 @@ public class PacienteRepository
         context.Pacientes.Update(paciente);
         context.SaveChanges();
     }    
+
+    public static async Task Excluir(Paciente paciente)
+    {
+        await using var context = CreateContext();
+        context.Pacientes.Remove(paciente);
+        context.SaveChanges();
+    }    
 }
