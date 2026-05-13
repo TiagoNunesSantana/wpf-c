@@ -356,19 +356,19 @@ https://github.com/TiagoNunesSantana/wpf-c/releases
 
 ### Dashboard
 
-![Dashboard](docs/screenshots/dashboard.png)
+![Dashboard](https://raw.githubusercontent.com/TiagoNunesSantana/wpf-c/main/docs/screenshots/dashboard.png)
 
 ### Pacientes
 
-![Pacientes](docs/screenshots/pacientes.png)
+![Pacientes](https://raw.githubusercontent.com/TiagoNunesSantana/wpf-c/main/docs/screenshots/pacientes.png)
 
 ### Exames
 
-![Exames](docs/screenshots/exames.png)
+![Exames](https://raw.githubusercontent.com/TiagoNunesSantana/wpf-c/main/docs/screenshots/exames.png)
 
 ### Wizard de Configuração
 
-![Wizard de Configuração](docs/screenshots/wizard.png)
+![Wizard de Configuração](https://raw.githubusercontent.com/TiagoNunesSantana/wpf-c/main/docs/screenshots/wizard.png)
 
 🗺️ Roadmap
 
